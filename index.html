@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+    
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyahangman-kKqgvjK9QX_G1OgA",
+      authDomain: "haloween.firebase.com",
+      projectId: "hangmanween_ID",
+      storageBucket: "manifest.appspot.com",
+      messagingSenderId: "ojhtr345fdyun",
+      appId: "1:1234567890:web:abcdef123456"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+  
+    
+    async function uploadWords() {
+      const collRef = collection(db, "words");
+      for (const item of words) {
+        await addDoc(collRef, item);
+      }
+      console.log("Words uploaded!");
+    }
+  
+   
+  
+    
+    async function fetchWords() {
+      const querySnapshot = await getDocs(collection(db, "words"));
+      const result = [];
+      querySnapshot.forEach((doc) => {
+        result.push(doc.data());
+      });
+      console.log(result);
+    }
+  
+    
+    fetchWords();
+  </script>
+  
+
+
+</head>
+<body background="pic.jpg">
+    <div class="game-container">       
+        <h1>HANGOWEEN ! <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <script>
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('Service Worker Registered'))
+                    .catch(error => console.log('Service Worker Registration Failed', error));
+                }
+              </script>
+              
+            
+        </body>
+        </html></h1>
+        <p class="hint">Hint: <span id="hint-text"></span></p>
+        
+        <!-- Hangman SVG figure -->
+        <div class="hangman">
+            <svg height="250" width="200" class="figure-container">
+                <!-- Stand -->
+                <line x1="20" y1="230" x2="120" y2="230"></line>
+                <line x1="70" y1="230" x2="70" y2="20"></line>
+                <line x1="70" y1="20" x2="150" y2="20"></line>
+                <line x1="150" y1="20" x2="150" y2="50"></line>
+
+                <!-- Head -->
+                <circle cx="150" cy="70" r="20" class="figure-part"></circle>
+                <!-- Body -->
+                <line x1="150" y1="90" x2="150" y2="140" class="figure-part"></line>
+                <!-- Arms -->
+                <line x1="150" y1="100" x2="130" y2="120" class="figure-part"></line>
+                <line x1="150" y1="100" x2="170" y2="120" class="figure-part"></line>
+                <!-- Legs -->
+                <line x1="150" y1="140" x2="130" y2="180" class="figure-part"></line>
+                <line x1="150" y1="140" x2="170" y2="180" class="figure-part"></line>
+            </svg>
+        </div>
+
+        <!-- Word Display and Keyboard -->
+        <div class="word-display"></div>
+        <div class="keyboard"></div>
+        
+        <!-- Message Section -->
+        <p class="message"></p>
+
+        <!-- Restart Button -->
+        <button id="reset-btn">Next !</button>
+
+        <!-- Audio Element for Funky Background Music (Autoplay) -->
+        <audio id="background-music" autoplay loop>
+            <source src="oii.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>   
+    </div>
+    <script>
+        const music = document
+
+       
+
+
+
+
