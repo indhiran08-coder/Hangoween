@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    background-color: #daa410; /* Darker background for contrast */
+    color: #eabd65; /* Pumpkin orange */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🌫️ Enhanced Fog Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0.25; /* Increased visibility */
+    z-index: -1;
+    animation: fogMove 10s infinite alternate ease-in-out;
+}
+
+@keyframes fogMove {
+    0% { transform: translateX(-10px); }
+    100% { transform: translateX(10px); }
+}
+
+/* 👀 Enhanced Glowing Eyes */
+body::after {
+    content: "👀";
+    position: absolute;
+    bottom: 3%;
+    right: 37%;
+    font-size: 40px;
+    text-shadow: 0 0 30px red, 0 0 60px darkred;
+    animation: blink 4s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    40% { opacity: 0.2; }
+    80% { opacity: 0.5; }
+}
+
+/* 🩸 Enhanced Dripping Blood Effect on Title */
+h1 {
+    font-size: 66px;
+    color: #ffcc00;
+    text-shadow: 0 0 30px #ff4400, 0 0 50px darkred;
+    animation: float 2s infinite alternate ease-in-out;
+    position: relative;
+}
+
+/* 🔥 More Realistic Blood Drips */
+h1::after {
+    content: "🩸";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    animation: drip 1.8s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+@keyframes drip {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(12px); opacity: 0.6; }
+    100% { transform: translateY(18px); opacity: 0; }
+}
+
+/* 🕸️ More Polished Game Container */
+.game-container {
+    background: linear-gradient(145deg, #8c7979, #292929);
+    padding: 25px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 0 40px rgba(255, 94, 0, 0.9);
+    border: 4px solid #ff4400;
+    position: relative;
+}
+
+/* 🦇 More Noticeable Spooky Webs */
+.game-container::before,
+.game-container::after {
+    content: "🕸️";
+    font-size: 65px;
+    color: #ffcc00;
+    position: absolute;
+    animation: flicker 2s infinite alternate;
+}
+
+.game-container::before { top: -30px; left: -30px; }
+.game-container::after { bottom: -30px; right: -30px; }
+
+/* 💀 Hangman Figure Refinements */
+.hangman svg {
+    stroke: #fe8104;
+    stroke-width: 4pt;
+    fill: transparent;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 0px 10px #fe8104);
+}
+
+/* 🔥 Word Display with Even More Glow */
+.word-display {
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 0 0 20px #ff4400, 0 0 35px darkred;
+}
+
+/* 🕷️ Enhanced Letter Appearance */
+.letter {
+    border-bottom: 4px solid #ff7518;
+    width: 35px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46px;
+    margin: 0 6px;
+    color: #fff;
+    text-shadow: 0 0 10px #ff7518;
+}
+
+/* 🎃 Keyboard with Smooth Animations */
+.key {
+    background: #222;
+    color: #ffcc00;
+    padding: 12px;
+    border: 2px solid #ff7518;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-shadow: 0 0 8px #ffcc00;
+    transition: all 0.3s ease-in-out;
+    animation: flicker 1.8s infinite alternate;
+}
+
+.key:hover {
+    background: #f6f4f4;
+    color: black;
+    box-shadow: 0 0 20px #ff4400;
+    transform: scale(1.15);
+}
+
+.key:active {
+    background: black;
+    color: red;
+}
+
+/* 🔥 More Immersive Reset Button */
+#reset-btn {
+    background: linear-gradient(145deg, #8b0000, #a00000);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    text-shadow: 0 0 12px red;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+}
+
+#reset-btn:hover {
+    background: linear-gradient(145deg, #ff0000, #cc0000);
+    box-shadow: 0 0 30px #ff0000;
+    transform: scale(1.15);
+}
+
+/* 🩸 Improved Blood Drip Animation on Button */
+#reset-btn::after {
+    content: "🩸";
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    animation: drip 2s infinite ease-in-out;
+}
+.score {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-top: 10px;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+
